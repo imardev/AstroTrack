@@ -1,5 +1,26 @@
 import image from "../assets/orbital.png";
+import { getTotalNeos, getHazardousNeos } from "../services/NasaApi.js";
+import { useEffect, useState } from "react";
+import { ClockFading } from "lucide-react";
 export default function InformationSection() {
+  const [totalNeos, setTotalNeos] = useState(0);
+  const [hazardousNeos, setHazardousNeos] = useState(0);
+
+  useEffect(() => {
+    const fetchTotalNeos = async () => {
+      const count = await getTotalNeos();
+      setTotalNeos(count);
+    };
+
+    const fetchHazardousNeos = async () => {
+      const count = await getHazardousNeos();
+      setHazardousNeos(count);
+    };
+
+    fetchTotalNeos();
+    fetchHazardousNeos();
+  }, []);
+
   return (
     <section className="information bg-[#0a0e1a] ">
       <section className="grid grid-cols-[1.7fr_1.2fr] gap-y-4 gap-x-6 px-8 py-12 text-white w-470 mx-auto">
@@ -13,14 +34,18 @@ export default function InformationSection() {
           </div>
           <div className="flex mt-40 relative z-10">
             <div className="probability relative z-10 ml-6 bg-[#1c2233]/70 w-70 h-30 rounded-lg flex justify-center flex-col gap-2">
-              <span className="text-[#9af8ff] font-bold text-3xl ml-11">
-                0.02%
+              <span className="text-[#9af8ff] font-semibold text-3xl ml-7">
+                {hazardousNeos}
               </span>
-              <p className="text-center">IMPACT PROBABILITY SUM</p>
+              <p className="text-center font-light text-zinc-300">
+                POTENTIALLY HAZARDOUS (24h)
+              </p>
             </div>
-            <div className="neo-24 relative z-10 bg-[#1c2233]/70 w-60 h-30 rounded-lg ml-6 flex justify-center  flex-col">
-              <span className=" font-bold text-3xl ml-17">1,243</span>
-              <p className="text-center ">LOGGED NEOS (24)</p>
+            <div className="neo-24 relative z-10 bg-[#1c2233]/70 w-70 h-30 rounded-lg ml-6 flex justify-center  flex-col">
+              <span className=" font-semibold text-3xl ml-10">{totalNeos}</span>
+              <p className="text-center font-light text-zinc-300">
+                ASTEROIDS DETECTED (24h)
+              </p>
             </div>
           </div>
           <img
@@ -30,9 +55,14 @@ export default function InformationSection() {
           />
         </article>
         <article className="mt-20 bg-[#131726] px-8 py-4 rounded-lg h-63">
-          <span>ORBITA. TRAJECTORY MONITOR</span>
-          <h3>Precision visualization of near-earth paths</h3>
-          <div className="probability">0.02%</div>
+          <ClockFading className="bg-purple-900 text-purple-400 p-2 size-10 rounded-lg mt-2 mb-4" />
+          <h3 className="font-bold text-xl mb-1">Historical Archive</h3>
+          <p className="w-160 mt-6">
+            Access decades of observation records dating back to the inception
+            of the NEO program, unlocking powerful insights through historical
+            data analysis, trend identification, and continuous monitoring of
+            near-Earth objects.
+          </p>
         </article>
         <article className=" bg-[#131726] px-8 py-4 rounded-lg h-63 ">
           <span>ORBITA. TRAJECTORY MONITOR</span>
