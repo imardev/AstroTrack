@@ -1,4 +1,5 @@
 # 🚀 AstroTrack
+
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Deploy](https://img.shields.io/badge/deploy-GitHub%20Pages-222222?style=for-the-badge&logo=github)
@@ -9,7 +10,6 @@
 
 > **Asteroid Monitoring System**  
 > Real-time insights on near-earth objects powered by NASA data, offering precise tracking, risk evaluation, and a clean view of asteroid activity.
-
 
 ---
 
@@ -25,9 +25,9 @@ AstroTrack is a modern data-driven web application designed to transform raw spa
 
 Rather than exposing raw API responses, the application focuses on:
 
-- clarity over noise  
-- usability over complexity  
-- insights over raw data  
+- clarity over noise
+- usability over complexity
+- insights over raw data
 
 ---
 
@@ -85,19 +85,19 @@ You can use NASA's DEMO_KEY for testing, but it has rate limits.
 
 ### 🔹 Main Interface
 
-![AstroTrack Preview](./src/assets/principal.png)
+![AstroTrack Preview](https://raw.githubusercontent.com/imardev/AstroTrack/refs/heads/main/src/assets/principal.png)
 
 ### 🔹 Results Information
 
-![AstroTrack Preview](./src/assets/neo.png)
+![AstroTrack Preview](https://raw.githubusercontent.com/imardev/AstroTrack/refs/heads/main/src/assets/neo.png)
 
 ## 🚧 Roadmap
 
-- 📈 Historical comparisons between dates  
-- 🔔 Hazard alert system  
-- 🌍 Interactive orbital visualization  
-- 📊 Advanced analytics  
-- 📱 Improved mobile experience  
+- 📈 Historical comparisons between dates
+- 🔔 Hazard alert system
+- 🌍 Interactive orbital visualization
+- 📊 Advanced analytics
+- 📱 Improved mobile experience
 
 ## 📄 License
 
