@@ -1,40 +1,47 @@
 # 🚀 AstroTrack
+![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![Deploy](https://img.shields.io/badge/deploy-GitHub%20Pages-222222?style=for-the-badge&logo=github)
+![Build](https://img.shields.io/github/actions/workflow/status/imardev/AstroTrack/deploy.yml?style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-A modern web application to explore near-Earth asteroid activity using NASA data.
+> **Asteroid Monitoring System**  
+> Real-time insights on near-earth objects powered by NASA data, offering precise tracking, risk evaluation, and a clean view of asteroid activity.
 
-AstroTrack allows you to visualize daily asteroid data, identify potentially hazardous objects, and understand space activity through a clean and intuitive interface.
 
 ---
 
 ## 🌐 Live Demo
 
-_(Add your deployed link here — e.g. Cloudflare Pages)_
+https://imardev.github.io/AstroTrack/
 
 ---
 
-## 📌 Description
+## 📌 Overview
 
-AstroTrack is a data-driven web application that transforms raw asteroid data into clear and actionable insights.
+AstroTrack is a modern data-driven web application designed to transform raw space telemetry into clear, structured, and actionable insights.
 
-Instead of displaying raw API responses, it provides:
+Rather than exposing raw API responses, the application focuses on:
 
-- structured information
-- visual clarity
-- meaningful metrics
+- clarity over noise  
+- usability over complexity  
+- insights over raw data  
 
 ---
 
 ## ✨ Features
 
-- 📅 Search asteroid data by date
-- ☄️ Total near-Earth objects detected per day
-- ⚠️ Hazardous asteroid detection
-- 📊 Key insights such as:
+- 📅 Query asteroid data by date
+- ☄️ Daily near-Earth object tracking
+- ⚠️ Hazardous asteroid detection system
+- 📊 Key metrics:
   - Closest approach distance
-  - Fastest object
-  - Largest asteroid _(planned)_
-- 🎯 Clean and modern UI focused on usability
-- 🌌 Space-inspired design
+  - Fastest object detected
+  - Largest asteroid (planned)
+- 🎯 Clean, minimal and intuitive UI
+- 🌌 Space-inspired visual design
 
 ---
 
@@ -48,17 +55,17 @@ This project uses the NASA Near Earth Object Web Service (NeoWs):
 
 ## 🛠️ Tech Stack
 
-- ⚛️ React
-- ⚡ Vite
-- 🎨 Tailwind CSS
-- 🌐 Fetch API
+- ⚛️ React (UI layer)
+- ⚡ Vite (build tool)
+- 🎨 Tailwind CSS (styling)
+- 🌐 Fetch API (data layer)
 
 ---
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/tu-usuario/astrotrack.git
+git clone https://github.com/imardev/AstroTrack.git
 cd astrotrack
 pnpm install
 pnpm dev
@@ -76,37 +83,30 @@ You can use NASA's DEMO_KEY for testing, but it has rate limits.
 
 ## 📸 Preview
 
-(Add screenshots of your UI here — this is very important for your portfolio)
+### 🔹 Main Interface
 
-## 🧠 Project Goal
+![AstroTrack Preview](./src/assets/principal.png)
 
-This project focuses on transforming raw space data into meaningful insights.
+### 🔹 Results Information
 
-The goal is not just to display data, but to:
+![AstroTrack Preview](./src/assets/neo.png)
 
-improve readability
-enhance user understanding
-provide quick interpretation of asteroid activity
+## 🚧 Roadmap
 
-- 🚧 Future Improvements
-- 📈 Historical comparisons between dates
-- 🔔 Hazard alert system
-- 🌍 Interactive orbital visualization
-- 📊 Advanced analytics
-- 📱 Improved mobile experience
+- 📈 Historical comparisons between dates  
+- 🔔 Hazard alert system  
+- 🌍 Interactive orbital visualization  
+- 📊 Advanced analytics  
+- 📱 Improved mobile experience  
 
 ## 📄 License
 
-MIT License
+[MIT License](/LICENSE)
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Developed by Ismael
 
-⭐ Support
+## ⭐ Support
 
 If you find this project useful, consider giving it a star on GitHub!
-
-```
-
-```

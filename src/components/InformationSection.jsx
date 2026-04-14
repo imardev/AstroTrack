@@ -1,7 +1,7 @@
 import image from "../assets/orbital.png";
 import { getTotalNeos, getHazardousNeos } from "../services/NasaApi.js";
 import { useEffect, useState } from "react";
-import { ClockFading } from "lucide-react";
+import { ClockFading, Orbit } from "lucide-react";
 export default function InformationSection() {
   const [totalNeos, setTotalNeos] = useState(0);
   const [hazardousNeos, setHazardousNeos] = useState(0);
@@ -54,7 +54,7 @@ export default function InformationSection() {
             className="w-100 z-1 absolute inset-0 top-30 left-140 rounded-t-lg"
           />
         </article>
-        <article className="mt-20 bg-[#131726] px-8 py-4 rounded-lg h-63">
+        <article className="mt-20 bg-[#131726] px-8 py-4 rounded-lg h-63 border border-purple-900/30">
           <ClockFading className="bg-purple-900 text-purple-400 p-2 size-10 rounded-lg mt-2 mb-4" />
           <h3 className="font-bold text-xl mb-1">Historical Archive</h3>
           <p className="w-160 mt-6">
@@ -64,9 +64,14 @@ export default function InformationSection() {
             near-Earth objects.
           </p>
         </article>
-        <article className=" bg-[#131726] px-8 py-4 rounded-lg h-63 ">
-          <span>ORBITA. TRAJECTORY MONITOR</span>
-          <h3>Precision visualization of near-earth paths</h3>
+        <article className=" bg-[#131726] px-8 py-4 rounded-lg h-63 border border-cyan-900/30">
+          <Orbit className="bg-cyan-900 text-cyan-400 p-2 size-10 rounded-lg mt-2 mb-4" />
+          <h3 className="font-bold text-xl mb-1">Asteroid Data Intelligence</h3>
+          <p className="w-160 mt-6">
+            Real-time insights on near-earth objects powered by NASA data,
+            providing structured information for tracking, analysis, and
+            scientific visualization of asteroid activity.
+          </p>
           <div className="probability">0.02%</div>
         </article>
       </section>
