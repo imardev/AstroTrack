@@ -4,9 +4,6 @@
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 ![Deploy](https://img.shields.io/badge/deploy-GitHub%20Pages-222222?style=for-the-badge&logo=github)
 ![Build](https://img.shields.io/github/actions/workflow/status/imardev/AstroTrack/deploy.yml?style=for-the-badge)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 > **Asteroid Monitoring System**  
 > Real-time insights on near-earth objects powered by NASA data, offering precise tracking, risk evaluation, and a clean view of asteroid activity.
