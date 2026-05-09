@@ -1,71 +1,66 @@
-const BaseUrl = "https://api.nasa.gov/neo/rest/v1/feed";
-const API_KEY = import.meta.env.VITE_NASA_API_KEY;
+const BaseUrl = "https://nasa.ismartin.com";
 
-const today = new Date();
+function getTodayDate() {
+  return new Date().toISOString().split("T")[0];
+}
 
-const date = today.toISOString().split("T")[0];
+async function fetchNeosByDate(date) {
+  const response = await fetch(
+    `${BaseUrl}?start_date=${date}&end_date=${date}`,
+  );
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`HTTP ${response.status}: ${errorText}`);
+  }
+
+  return response.json();
+}
 
 export async function getTotalNeos() {
   try {
-    const response = await fetch(
-      `${BaseUrl}?start_date=${date}&end_date=${date}&api_key=${API_KEY}`,
-    );
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`HTTP ${response.status}: ${errorText}`);
-    }
-
-    const data = await response.json();
+    const date = getTodayDate();
+    const data = await fetchNeosByDate(date);
 
     if (!data || typeof data.element_count !== "number") {
       throw new Error("Invalid API response");
     }
 
-    const totalNeos = data.element_count;
-    return totalNeos;
+    return data.element_count;
   } catch (error) {
-    console.error("Error fetching data from NASA API:", error);
+    console.error("Error fetching total NEOs:", error);
     throw error;
   }
 }
 
 export async function getHazardousNeos() {
   try {
-    const response = await fetch(
-      `${BaseUrl}?start_date=${date}&end_date=${date}&api_key=${API_KEY}`,
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    const data = await response.json();
-    const neos = data.near_earth_objects?.[date] ?? [];
-    const hazardousCount = neos.filter(
-      (neo) => neo.is_potentially_hazardous_asteroid === true,
-    ).length;
+    const date = getTodayDate();
+    const data = await fetchNeosByDate(date);
 
-    return hazardousCount;
+    const neos = data.near_earth_objects?.[date] ?? [];
+
+    return neos.filter((neo) => neo.is_potentially_hazardous_asteroid === true)
+      .length;
   } catch (error) {
-    console.error("Error fetching hazardous NEOs from NASA API:", error);
+    console.error("Error fetching hazardous NEOs:", error);
     throw error;
   }
 }
 
 export async function getNeosByDate(date) {
   try {
-    const response = await fetch(
-      `${BaseUrl}?start_date=${date}&end_date=${date}&api_key=${API_KEY}`,
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    }
-    const data = await response.json();
-    const neos = data.near_earth_objects?.[date] ?? [];
-    return neos;
+    const data = await fetchNeosByDate(date);
+
+    return data.near_earth_objects?.[date] ?? [];
   } catch (error) {
-    console.error("Error fetching NEOs by date from NASA API:", error);
+    console.error("Error fetching NEOs by date:", error);
     throw error;
   }
 }
 
-export default { getTotalNeos, getHazardousNeos, getNeosByDate };
+export default {
+  getTotalNeos,
+  getHazardousNeos,
+  getNeosByDate,
+};
