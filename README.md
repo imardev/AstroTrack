@@ -12,7 +12,7 @@
 
 ## 🌐 Live Demo
 
-https://imardev.github.io/AstroTrack/
+https://astrotrack.ismartin.com
 
 ---
 
